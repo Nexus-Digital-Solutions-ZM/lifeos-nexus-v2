@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #C49E52;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: #0D1017;
+    color: #F5F0E8;
+    min-height: 100vh;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #111318; }
+  ::-webkit-scrollbar-thumb { background: #2A2D35; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #374151; }
+}
+
+@layer utilities {
+  .text-gold { color: #C49E52; }
+  .bg-surface { background-color: #111318; }
+  .bg-surface-2 { background-color: #13161D; }
+  .border-subtle { border-color: #2A2D35; }
+
+  .badge-critical { background: #FF2D55; color: #fff; }
+  .badge-urgent   { background: #FF6B00; color: #fff; }
+  .badge-high     { background: #FFB800; color: #000; }
+  .badge-medium   { background: #1A6BFF; color: #fff; }
+  .badge-low      { background: #2D3748; color: #9CA3AF; }
+
+  .dot-active   { background: #00D084; }
+  .dot-pending  { background: #FFB800; }
+  .dot-blocked  { background: #FF2D55; }
+  .dot-done     { background: #6B7280; }
+
+  .glow-gold { box-shadow: 0 0 20px rgba(196, 158, 82, 0.15); }
+  .glow-red  { box-shadow: 0 0 12px rgba(255, 45, 85, 0.3); }
+}
