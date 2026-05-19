@@ -22,7 +22,7 @@ export default function RemindersPage() {
 
   const load = async () => {
     const res = await api.get("/reminders/").catch(() => ({ data: [] }));
-    setReminders(res.data);
+    setReminders(Array.isArray(res.data) ? res.data : []);
   };
 
   useEffect(() => { load(); }, []);

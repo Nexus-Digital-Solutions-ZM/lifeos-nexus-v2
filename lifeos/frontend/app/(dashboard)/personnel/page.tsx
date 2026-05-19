@@ -20,7 +20,7 @@ export default function PersonnelPage() {
 
   const load = async () => {
     const res = await api.get("/personnel/").catch(() => ({ data: [] }));
-    setPeople(res.data);
+    setPeople(Array.isArray(res.data) ? res.data : []);
   };
 
   useEffect(() => { load(); }, []);

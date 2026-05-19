@@ -24,7 +24,7 @@ export default function ProjectsPage() {
 
   const load = async () => {
     const res = await api.get("/projects/").catch(() => ({ data: [] }));
-    setProjects(res.data);
+    setProjects(Array.isArray(res.data) ? res.data : []);
   };
 
   useEffect(() => { load(); }, []);
