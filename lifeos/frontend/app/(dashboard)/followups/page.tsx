@@ -18,7 +18,7 @@ export default function FollowUpsPage() {
   const load = async () => {
     const done = filter === "done";
     const res = await api.get(`/followups/?done=${done}`).catch(() => ({ data: [] }));
-    setItems(res.data);
+    setItems(Array.isArray(res.data) ? res.data : []);
   };
 
   useEffect(() => { load(); }, [filter]);

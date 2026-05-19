@@ -23,8 +23,8 @@ export default function DashboardPage() {
         api.get("/followups/?done=false").catch(() => ({ data: [] })),
         api.get("/followups/stats/summary").catch(() => ({ data: null })),
       ]);
-      setProjects(pRes.data);
-      setFollowups(fRes.data);
+      setProjects(Array.isArray(pRes.data) ? pRes.data : []);
+      setFollowups(Array.isArray(fRes.data) ? fRes.data : []);
       setStats(sRes.data);
     };
     load();
