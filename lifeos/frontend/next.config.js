@@ -17,8 +17,8 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       "script-src 'self' 'unsafe-eval' 'unsafe-inline'", // Next.js needs eval in dev
-      "style-src 'self' 'unsafe-inline'",
-      `connect-src 'self' ${API_URL || "http://localhost:8000"} ws://${process.env.NEXT_PUBLIC_WS_HOST || "localhost:8000"}`,
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      `connect-src 'self' ${API_URL || "http://localhost:8000"} wss://${process.env.NEXT_PUBLIC_WS_HOST || "localhost:8000"} ws://${process.env.NEXT_PUBLIC_WS_HOST || "localhost:8000"} https://fonts.gstatic.com`,
       "img-src 'self' data: https: blob:",
       "font-src 'self'",
       "frame-src 'none'",
